@@ -7,7 +7,7 @@ var app = builder.Build();
 app.UseWebSockets();
 app.UseHttpsRedirection();
 
-Task.Run(() => GameLoop.StartGame());
+Task.Run(GameLoop.StartGame);
 
 app.MapGet("/ws/gameloop", GameLoop.Connect);
 
